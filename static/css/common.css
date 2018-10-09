@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0
+}
+
+html,
+body {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 20px;
+    height: 100%;
+}
+
+@media only screen and (min-width: 400px) {
+    html {
+        font-size: 21.33333333px !important;
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    html {
+        font-size: 21px !important;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    html {
+        font-size: 25.6px !important;
+    }
+}
+
+button,
+input,
+select,
+textarea {
+    outline: none;
+    border: 1px solid #fff;
+    -webkit-appearance:none;
+}
