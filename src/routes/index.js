@@ -1,6 +1,7 @@
 import React from 'react'
-import Imported from 'react-imported-component'
+import Loadable from 'react-loadable'
 import { renderRoutes } from 'react-router-config'
+import Loading from '@/components/Loading'
 
 const RootRoute = (
   { route } //根路由
@@ -13,7 +14,10 @@ const routes = [
       {
         path: '/',
         exact: true,
-        component: Imported(() => import('views/Home/index'))
+        component: Loadable({
+          loader: () => import('@/views/Home/index'),
+          loading: Loading
+        })
       }
     ]
   }
