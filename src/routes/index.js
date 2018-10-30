@@ -13,7 +13,7 @@ const routes = [
     routes: [
       {
         path: '/',
-        exact: true,
+        exact: true, //当使用children时，需要注释
         component: Loadable({
           loader: () => import('@/views/Home/index'),
           loading: Loading

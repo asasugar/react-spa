@@ -1,10 +1,18 @@
 import React from 'react'
+import { inject, observer } from 'mobx-react'
 import style from './index.scss'
 import logo from '../../assets/logo.svg'
 import Hello from 'components/Hello'
+
+@inject('store')
+@observer
 class Home extends React.Component {
-  state = {}
-  componentDidMount() {}
+  state = {
+    number: this.props.store.global.number
+  }
+  componentDidMount() {
+    this.props.store.global.add()
+  }
   componentWillUnmount() {}
   render() {
     return (

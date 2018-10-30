@@ -22,7 +22,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json'],
     modules: [resolve('src'), resolve('node_modules')],
     alias: {
-      src: resolve('src'),
+      '@': resolve('src'),
       assets: resolve('src/assets'),
       components: resolve('src/components'),
       routes: resolve('src/routes'),

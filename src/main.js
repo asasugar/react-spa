@@ -2,22 +2,23 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import { AppContainer } from 'react-hot-loader'
-import { Provider } from 'react-redux'
-import store from '$redux/store'
+import { Provider } from 'mobx-react'
+import store from './store'
 
 const render = Component => {
   ReactDOM.render(
-    <AppContainer>
-      <Provider store={store}>
+    <Provider store={store}>
+      <AppContainer>
         <Component />
-      </Provider>
-    </AppContainer>,
+      </AppContainer>
+    </Provider>,
     document.getElementById('root')
   )
 }
 
 render(App)
 
+// 局部刷新
 if (module.hot) {
   module.hot.accept('./App', () => render(App))
 }
