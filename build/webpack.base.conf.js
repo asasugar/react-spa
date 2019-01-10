@@ -13,10 +13,9 @@ module.exports = {
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
-    publicPath:
-      process.env.NODE_ENV === 'production'
-        ? config.build.assetsPublicPath
-        : config.dev.assetsPublicPath
+    publicPath: process.env.NODE_ENV === 'production' ?
+      config.build.assetsPublicPath :
+      config.dev.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
@@ -27,13 +26,11 @@ module.exports = {
       components: resolve('src/components'),
       routes: resolve('src/routes'),
       views: resolve('src/views'),
-      $redux: resolve('src/redux'),
       utils: resolve('src/utils/js/utils')
     }
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|jsx)?$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')],
